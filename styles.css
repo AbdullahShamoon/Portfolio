@@ -18,6 +18,7 @@ body {
   overflow-x: hidden;
   /* color: whitesmoke; */
   cursor: none;
+  /* scroll-behavior: smooth; */
 }
 
 
@@ -36,6 +37,20 @@ body {
   pointer-events: none;
   z-index: 1000;
   /* mix-blend-mode: difference; */
+}
+
+
+/* Arrow */
+
+.up-arrow {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  background-image: url("resources/up-arrow1.png");
+  background-size: contain;
 }
 
 
@@ -62,6 +77,7 @@ body {
   color: #ffffff;
   /* color: #111; */
   margin-right: 15px;
+  /* object-fit: contain; */
 }
 
 /* Nav links */
@@ -467,7 +483,7 @@ body {
 
 .p3right .buttons img{
   height: 50px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 
@@ -687,4 +703,27 @@ body {
   left: 46vw;
   top: 1vw;
 
+}
+
+
+
+/* -----Page 6 -----  */
+
+
+.page6{
+  min-height: 100vh;
+  width: 100%;
+  /* background-color: red; */
+  padding: 3rem 3rem;
+  color: white;
+
+}
+
+.page6 h1{
+  font-size: 1.3rem;
+}
+
+.page6 h1 span{
+  color: #13BAF1;
+  font-size: 2.8rem;
 }

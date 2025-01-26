@@ -15,7 +15,7 @@ gsap.ticker.add((time) => {
 // Disable lag smoothing in GSAP to prevent any delay in scroll animations
 gsap.ticker.lagSmoothing(0);
 
-
+// gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
 
 //cursor
 const cursor = document.querySelector(".cursor");
@@ -42,6 +42,53 @@ gsap.from(".navbar", {
   duration: 1,
   ease: "bounce",
 });
+
+let navLinks = document.querySelectorAll(".nav-links a")
+let sections = document.querySelectorAll(".section")
+
+navLinks.forEach((link, index) => {
+  link.addEventListener("click", () => {
+    gsap.to(window, {
+      duration: 1, scrollTo: {
+        y: "#link" + (index + 1),
+      }
+    });
+  });
+  link.addEventListener("mouseenter", () => {
+    gsap.to(cursor, {
+      backgroundImage: "url(resources/cursor.gif)",
+      scale: 1.5,
+      duration: 0.2,
+    })
+  })
+  link.addEventListener("mouseleave", () => {
+    gsap.to(cursor, {
+      backgroundImage: "url(resources/cursor.png)",
+      scale: 1,
+      duration: 0.2
+    })
+  })
+});
+
+
+window.addEventListener("scroll", () => {
+  // Loop through each section
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 50; // Add some offset
+    const sectionHeight = section.offsetHeight;
+
+    // Check if the section is in view
+    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+      // Remove 'active' from all links
+      navLinks.forEach((link) => link.classList.remove("active"));
+
+      // Add 'active' to the link matching the current section
+      const activeLink = document.querySelector(`.nav-links .${section.id}`);
+      activeLink.classList.add("active");
+    }
+  });
+});
+
 
 
 //   Page 1
@@ -139,30 +186,36 @@ let image32 = document.querySelector(".proj-32")
 
 // Image animations
 
-image1.addEventListener("mouseenter",(e)=>{
+image1.addEventListener("mouseenter", (e) => {
   gsap.to(image1, {
     scale: 1.1,
-    duration: 0.5
+    duration: 0.5,
+    ease: "back.out(4)"
   })
   gsap.to(image12, {
     scale: 27,
     opacity: 1,
     top: "-9vw",
     left: "30vw",
-    duration: 0.5
+    duration: 0.5,
+    ease: "circ.out",
   })
   gsap.to(image13, {
     scale: 20,
     opacity: 1,
     left: "55vw",
-    duration: 0.5
+    duration: 0.5,
+    ease: "circ.out",
+    delay: 0.1
   })
   gsap.to(image14, {
     scale: 27,
     opacity: 1,
     top: "22vw",
     left: "30vw",
-    duration: 0.5
+    duration: 0.5,
+    ease: "circ.out",
+    delay: 0.2
   })
   gsap.to(image2, {
     opacity: 0.2
@@ -170,14 +223,13 @@ image1.addEventListener("mouseenter",(e)=>{
   gsap.to(image3, {
     opacity: 0.2
   })
-  gsap.to(cursor,{
+  gsap.to(cursor, {
     backgroundImage: "url(resources/cursor.gif)",
-    width:"30px",
-    height:"30px",
+    scale: 1.5,
   })
 })
 
-image1.addEventListener("mouseleave",(e)=>{
+image1.addEventListener("mouseleave", (e) => {
   gsap.to(image1, {
     scale: 1,
     duration: 0.5
@@ -187,20 +239,23 @@ image1.addEventListener("mouseleave",(e)=>{
     opacity: 0,
     top: "6vw",
     left: "33vw",
-    duration: 0.5
+    duration: 0.5,
+
   })
   gsap.to(image13, {
     scale: 1,
     opacity: 0,
     left: "33vw",
-    duration: 0.5
+    duration: 0.5,
+    delay: 0.1
   })
   gsap.to(image14, {
     scale: 1,
     opacity: 0,
     top: "6vw",
     left: "33vw",
-    duration: 0.5
+    duration: 0.5,
+    delay: 0.2
   })
   gsap.to(image2, {
     opacity: 1
@@ -208,37 +263,39 @@ image1.addEventListener("mouseleave",(e)=>{
   gsap.to(image3, {
     opacity: 1
   })
-  gsap.to(cursor,{
+  gsap.to(cursor, {
     backgroundImage: "url(resources/cursor.png)",
-    width:"20px",
-    height:"20px",
+    scale: 1,
   })
 })
 
-image2.addEventListener("mouseenter",(e)=>{
+image2.addEventListener("mouseenter", (e) => {
   gsap.to(image2, {
     scale: 1.1,
-    duration: 0.5
+    duration: 0.5,
+    ease: "back.out(4)"
+
   })
   gsap.to(image1, {
     opacity: 0.2
   })
   gsap.to(image3, {
-    opacity: 0.2 
+    opacity: 0.2
   })
   gsap.to(image22, {
     scale: 25,
     opacity: 1,
     right: "55vw",
-    duration: 0.5
+    duration: 0.5,
+    ease: "circ.out",
+
   })
-  gsap.to(cursor,{
+  gsap.to(cursor, {
     backgroundImage: "url(resources/cursor.gif)",
-    width:"30px",
-    height:"30px",
+    scale: 1.5
   })
 })
-image2.addEventListener("mouseleave",(e)=>{
+image2.addEventListener("mouseleave", (e) => {
   gsap.to(image2, {
     scale: 1,
     duration: 0.5
@@ -255,17 +312,18 @@ image2.addEventListener("mouseleave",(e)=>{
     right: "33vw",
     duration: 0.5
   })
-  gsap.to(cursor,{
+  gsap.to(cursor, {
     backgroundImage: "url(resources/cursor.png)",
-    width:"20px",
-    height:"20px",
+    scale: 1
   })
 })
 
-image3.addEventListener("mouseenter",(e)=>{
+image3.addEventListener("mouseenter", (e) => {
   gsap.to(image3, {
     scale: 1.1,
-    duration: 0.5
+    duration: 0.5,
+    ease: "back.out(4)"
+
   })
   gsap.to(image1, {
     opacity: 0.2
@@ -277,15 +335,16 @@ image3.addEventListener("mouseenter",(e)=>{
     scale: 28,
     opacity: 1,
     top: "-10vw",
-    duration: 0.5
+    duration: 0.5,
+    ease: "circ.out",
+
   })
-  gsap.to(cursor,{
+  gsap.to(cursor, {
     backgroundImage: "url(resources/cursor.gif)",
-    width:"30px",
-    height:"30px",
+    scale: 1.5
   })
 })
-image3.addEventListener("mouseleave",(e)=>{
+image3.addEventListener("mouseleave", (e) => {
   gsap.to(image3, {
     scale: 1,
     duration: 0.5
@@ -302,15 +361,70 @@ image3.addEventListener("mouseleave",(e)=>{
     top: "1vw",
     duration: 0.5
   })
-  gsap.to(cursor,{
+  gsap.to(cursor, {
     backgroundImage: "url(resources/cursor.png)",
-    width:"20px",
-    height:"20px",
+    scale: 1
   })
 })
 
-// OnClick
+
+// Project Image OnClick
 
 image1.addEventListener("click", (e) => {
   window.open("https://github.com/AbdullahShamoon/pitch-me-a-coin", "_blank");
+})
+
+image2.addEventListener("click", (e) => {
+  window.open("https://github.com/AbdullahShamoon/BaatCheet", "_blank");
+})
+
+image3.addEventListener("click", (e) => {
+  window.open("https://abdullahshamoon.github.io/Kick-up/", "_blank");
+})
+
+
+
+// Back to Top
+
+let upArrow = document.querySelector(".up-arrow")
+
+gsap.to(upArrow, {
+  rotate : -90,
+  scrollTrigger: {
+    trigger: upArrow,
+    start: "top 80%",
+    end: "top 50%",
+    scrub: 2,
+    // markers: true
+  },
+})
+
+upArrow.addEventListener("click", () => {
+  gsap.to(window, {
+    duration: 1,
+    scrollTo: {
+      y: "#link1",
+    },
+    ease: "power2.out"
+  });
+})
+
+// OR....
+
+// upArrow.addEventListener("click", () => {
+//   document.querySelector(".page1").scrollIntoView({
+//     behavior: "smooth",});
+// })
+
+upArrow.addEventListener("mouseenter", () => {
+  gsap.to(cursor, {
+    backgroundImage: "url(resources/cursor.gif)",
+    scale: 1.5
+  })
+})
+upArrow.addEventListener("mouseleave", () => {
+  gsap.to(cursor, {
+    backgroundImage: "url(resources/cursor.png)",
+    scale: 1
+  })
 })
