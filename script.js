@@ -97,7 +97,7 @@ let tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".page1",
     scroller: "body",
-    markers: true,
+    // markers: true,
     start: "bottom 90%",
     end: "bottom 10%",
     scrub: 2,
@@ -536,4 +536,16 @@ watchMyRepo.addEventListener("mouseleave", () => {
     backgroundImage: "url(resources/cursor.png)",
     scale: 1
   })
+})
+
+gsap.from(".circle",{
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".circle",
+    scroller: "body",
+    // markers: true,
+    start: "top 30%",
+    end: "top 10%",
+    scrub: 1,
+  }
 })
