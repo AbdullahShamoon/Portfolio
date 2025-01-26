@@ -97,20 +97,29 @@ let tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".page1",
     scroller: "body",
-    // markers: true,
-    start: "top -15%",
-    end: "bottom 70%",
+    markers: true,
+    start: "bottom 90%",
+    end: "bottom 10%",
     scrub: 2,
   },
 });
 
 tl.to(".abdullah", {
-  x: -100,
+  x: 370,
+  y: 475,
+  scale: 0.4,
   duration: 1,
+  // color: "#FA5A5A",
+  color: "#58C2F9"
 }, "name");
 tl.to(".shamoon", {
-  x: 100,
+  x: 730,
+  y: 325,
+  scale: 0.5,
   duration: 1,
+  // color: "#FA5A5A",
+  color: "#58C2F9"
+
 }, "name");
 
 
@@ -387,6 +396,7 @@ image3.addEventListener("click", (e) => {
 // Back to Top
 
 let upArrow = document.querySelector(".up-arrow")
+let bubble = document.querySelector(".bubble")
 
 gsap.to(upArrow, {
   rotate : -90,
@@ -421,8 +431,107 @@ upArrow.addEventListener("mouseenter", () => {
     backgroundImage: "url(resources/cursor.gif)",
     scale: 1.5
   })
+  gsap.to(bubble,{
+    opacity: 1,
+    duration: 0.3,
+    width:"75px",
+    height:"65px",
+    fontSize:"13px",
+    left:"55px",
+    bottom:"50px"
+  })
 })
 upArrow.addEventListener("mouseleave", () => {
+  gsap.to(cursor, {
+    backgroundImage: "url(resources/cursor.png)",
+    scale: 1
+  })
+  gsap.to(bubble,{
+    opacity: 0,
+    duration: 0.3,
+    width:"1px",
+    height:"1px",
+    fontSize:"1px",
+    left:"40px",
+    bottom:"40px"
+  })
+})
+
+// Resume Button 
+
+let resumeBtn = document.querySelector(".resumeBtn");
+resumeBtn.addEventListener("click", () => {
+  window.open("https://drive.google.com/file/d/1s6qToP58NCp0JaFvkTqTfPIRzYc5LG1D/view?usp=sharing", "_blank");
+})
+resumeBtn.addEventListener("mouseenter", () => {
+  gsap.to(cursor, {
+    backgroundImage: "url(resources/cursor.gif)",
+    scale: 1.5
+  })
+})
+resumeBtn.addEventListener("mouseleave", () => {
+  gsap.to(cursor, {
+    backgroundImage: "url(resources/cursor.png)",
+    scale: 1
+  })
+})
+
+
+//  --- Page 3 ---
+
+let tl4 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".page3",
+    scroller: "body",
+    // markers: true,
+    start: "top 50%",
+    end: "top 10%",
+    scrub: 2,
+  }
+})
+
+tl4.from(".p3text1", {
+  x: -150,
+  ease: "back.out(4)"
+})
+tl4.from(".p3text2", {
+  x: -150,
+  ease: "back.out(4)"
+})
+tl4.from(".p3text3", {
+  x: -150,
+  ease: "back.out(4)"
+})
+tl4.from(".p3text4", {
+  x: -150,
+  ease: "back.out(4)"
+})
+
+
+
+let sayHi = document.querySelector(".sayHi");
+let watchMyRepo = document.querySelector(".watchMyRepo");
+
+sayHi.addEventListener("mouseenter", () => {
+  gsap.to(cursor, {
+    backgroundImage: "url(resources/cursor.gif)",
+    scale: 1.5
+  })
+})
+sayHi.addEventListener("mouseleave", () => {
+  gsap.to(cursor, {
+    backgroundImage: "url(resources/cursor.png)",
+    scale: 1
+  })
+})
+
+watchMyRepo.addEventListener("mouseenter", () => {
+  gsap.to(cursor, {
+    backgroundImage: "url(resources/cursor.gif)",
+    scale: 1.5
+  })
+})
+watchMyRepo.addEventListener("mouseleave", () => {
   gsap.to(cursor, {
     backgroundImage: "url(resources/cursor.png)",
     scale: 1
