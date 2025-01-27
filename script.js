@@ -399,7 +399,7 @@ let upArrow = document.querySelector(".up-arrow")
 let bubble = document.querySelector(".bubble")
 
 gsap.to(upArrow, {
-  rotate : -90,
+  rotate: -90,
   scrollTrigger: {
     trigger: upArrow,
     start: "top 80%",
@@ -431,14 +431,14 @@ upArrow.addEventListener("mouseenter", () => {
     backgroundImage: "url(resources/cursor.gif)",
     scale: 1.5
   })
-  gsap.to(bubble,{
+  gsap.to(bubble, {
     opacity: 1,
     duration: 0.3,
-    width:"75px",
-    height:"65px",
-    fontSize:"13px",
-    left:"55px",
-    bottom:"50px"
+    width: "75px",
+    height: "65px",
+    fontSize: "13px",
+    left: "55px",
+    bottom: "50px"
   })
 })
 upArrow.addEventListener("mouseleave", () => {
@@ -446,14 +446,14 @@ upArrow.addEventListener("mouseleave", () => {
     backgroundImage: "url(resources/cursor.png)",
     scale: 1
   })
-  gsap.to(bubble,{
+  gsap.to(bubble, {
     opacity: 0,
     duration: 0.3,
-    width:"1px",
-    height:"1px",
-    fontSize:"1px",
-    left:"40px",
-    bottom:"40px"
+    width: "1px",
+    height: "1px",
+    fontSize: "1px",
+    left: "40px",
+    bottom: "40px"
   })
 })
 
@@ -538,7 +538,7 @@ watchMyRepo.addEventListener("mouseleave", () => {
   })
 })
 
-gsap.from(".circle",{
+gsap.from(".circle", {
   opacity: 0,
   scrollTrigger: {
     trigger: ".circle",
@@ -549,3 +549,146 @@ gsap.from(".circle",{
     scrub: 1,
   }
 })
+
+
+
+
+// -----Page 6 -----
+
+//github
+document.querySelector(".text-github").addEventListener("mouseenter", () => {
+  gsap.to(".g-m-image", {
+    opacity: 1,
+    duration: 1,
+    rotate: -10,
+    // ease: "back.out(4)",
+    ease: "elastic.out(2)",
+    display: "block"
+  })
+  gsap.to(".g-image", {
+    opacity: 1,
+    duration: 0.6,
+    right: "60px",
+    ease: "back.out(2)",
+  })
+})
+
+document.querySelector(".text-github").addEventListener("mouseleave", () => {
+  gsap.to(".g-m-image", {
+    opacity: 0,
+    duration: 1,
+    rotate: -50,
+    ease: "power2.out",
+    display: "none"
+  })
+  gsap.to(".g-image", {
+    opacity: 0,
+    duration: 0.6,
+    right: "-260px",
+    ease: "power2.out",
+  })
+})
+
+//linkedin
+document.querySelector(".text-linkedin").addEventListener("mouseenter", () => {
+  gsap.to(".l-m-image", {
+    opacity: 1,
+    duration: 1,
+    rotate: -10,
+    // ease: "back.out(4)",
+    ease: "elastic.out(2)",
+    display: "block"
+  })
+  gsap.to(".l-image", {
+    opacity: 1,
+    duration: 0.6,
+    right: "60px",
+    ease: "back.out(2)",
+  })
+})
+
+document.querySelector(".text-linkedin").addEventListener("mouseleave", () => {
+  gsap.to(".l-m-image", {
+    opacity: 0,
+    duration: 1,
+    rotate: -50,
+    ease: "power2.out",
+    display: "none"
+  })
+  gsap.to(".l-image", {
+    opacity: 0,
+    duration: 0.6,
+    right: "-260px",
+    ease: "power2.out",
+  })
+})
+
+//instagram
+document.querySelector(".text-instagram").addEventListener("mouseenter", () => {
+  gsap.to(".i-m-image", {
+    opacity: 1,
+    duration: 1,
+    rotate: -10,
+    // ease: "back.out(4)",
+    ease: "elastic.out(2)",
+    display: "block"
+  })
+  gsap.to(".i-image", {
+    opacity: 1,
+    duration: 0.6,
+    right: "60px",
+    ease: "back.out(2)",
+  })
+})
+
+document.querySelector(".text-instagram").addEventListener("mouseleave", () => {
+  gsap.to(".i-m-image", {
+    opacity: 0,
+    duration: 1,
+    rotate: -50,
+    ease: "power2.out",
+    display: "none"
+  })
+  gsap.to(".i-image", {
+    opacity: 0,
+    duration: 0.6,
+    right: "-260px",
+    ease: "power2.out",
+  })
+})
+
+//facebook
+document.querySelector(".text-facebook").addEventListener("mouseenter", () => {
+  gsap.to(".f-m-image", {
+    opacity: 1,
+    duration: 1,
+    rotate: -10,
+    // ease: "back.out(4)",
+    ease: "elastic.out(2)",
+    display: "block"
+  })
+  gsap.to(".f-image", {
+    opacity: 1,
+    duration: 0.6,
+    right: "60px",
+    ease: "back.out(2)",
+  })
+})
+
+document.querySelector(".text-facebook").addEventListener("mouseleave", () => {
+  gsap.to(".f-m-image", {
+    opacity: 0,
+    duration: 1,
+    rotate: -50,
+    ease: "power2.out",
+    display: "none"
+  })
+  gsap.to(".f-image", {
+    opacity: 0,
+    duration: 0.6,
+    right: "-260px",
+    ease: "power2.out",
+  })
+})
+
+

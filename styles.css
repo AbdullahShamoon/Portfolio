@@ -515,7 +515,7 @@ body {
   /* cursor: pointer; */
 }
 
-.circle{
+.circle {
   position: absolute;
   top: 20px;
   right: 0px;
@@ -753,7 +753,7 @@ body {
 .page6 {
   min-height: 100vh;
   width: 100%;
-  /* background-color: red; */
+  /* background-color: yellow; */
   padding: 3rem 3rem;
   color: white;
 
@@ -767,6 +767,96 @@ body {
   color: #13BAF1;
   font-size: 2.8rem;
 }
+
+.pg6-content {
+  display: flex;
+  /* flex-direction: column; */
+  /* gap: 2rem; */
+  justify-content: space-between;
+  margin-top: 5rem;
+  width: 100%;
+}
+
+.pg6-left {
+  font-size: 2rem;
+  /* letter-spacing: 2px; */
+  word-spacing: 5px;
+  /* background-color: green; */
+  width: 35%;
+  /* text-align: center; */
+}
+
+.social-media {
+  color: rgb(230, 90, 90);
+}
+
+.social-media:hover {
+  text-decoration: line-through;
+}
+
+.email a {
+  color: #13BAF1;
+}
+
+.email a:hover {
+  text-decoration: line-through;
+}
+
+.pg6-right {
+  display: flex;
+  /* flex-direction: column; */
+  /* background-color: purple; */
+  width: 60%;
+}
+
+.pg6-texts {
+  width: 50%;
+}
+
+.text-flip {
+  /* background-color: burlywood; */
+  width: fit-content;
+  font-size: 4rem;
+  height: 70px;
+  overflow: hidden;
+}
+
+.text-flip div {
+  transition: all ease-out 0.5s;
+
+}
+
+.text-flip:hover div {
+  transform: translateY(-100%);
+}
+
+
+.pg6-icons {
+  position: relative;
+  width: 50%;
+}
+
+.mobile {
+  width: 170px;
+  position: absolute;
+  top: -100px;
+  right: 100px;
+  transform: rotate(-50deg);
+  transform-origin: top right;
+  opacity: 0;
+  display: none;
+}
+
+.pc {
+  width: 320px;
+  position: absolute;
+  bottom: -153px;
+  right: -260px;
+  opacity: 0;
+}
+
+
+
 
 
 
