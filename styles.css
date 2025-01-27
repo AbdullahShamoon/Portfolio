@@ -837,7 +837,7 @@ body {
 }
 
 .mobile {
-  width: 170px;
+  width: 180px;
   position: absolute;
   top: -100px;
   right: 100px;
@@ -847,13 +847,13 @@ body {
   display: none;
 }
 
-.pc {
+/* .pc {
   width: 320px;
   position: absolute;
   bottom: -153px;
   right: -260px;
   opacity: 0;
-}
+} */
 
 
 

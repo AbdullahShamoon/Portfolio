@@ -556,7 +556,8 @@ gsap.from(".circle", {
 // -----Page 6 -----
 
 //github
-document.querySelector(".text-github").addEventListener("mouseenter", () => {
+let textGithub = document.querySelector(".text-github")
+textGithub.addEventListener("mouseenter", () => {
   gsap.to(".g-m-image", {
     opacity: 1,
     duration: 1,
@@ -565,15 +566,20 @@ document.querySelector(".text-github").addEventListener("mouseenter", () => {
     ease: "elastic.out(2)",
     display: "block"
   })
-  gsap.to(".g-image", {
-    opacity: 1,
-    duration: 0.6,
-    right: "60px",
-    ease: "back.out(2)",
+  gsap.to(cursor, {
+    backgroundImage: "url(resources/cursor.gif)",
+    scale: 1.5,
+    duration: 0.2,
   })
+  // gsap.to(".g-image", {
+  //   opacity: 1,
+  //   duration: 0.6,
+  //   right: "60px",
+  //   ease: "back.out(2)",
+  // })
 })
 
-document.querySelector(".text-github").addEventListener("mouseleave", () => {
+textGithub.addEventListener("mouseleave", () => {
   gsap.to(".g-m-image", {
     opacity: 0,
     duration: 1,
@@ -581,16 +587,26 @@ document.querySelector(".text-github").addEventListener("mouseleave", () => {
     ease: "power2.out",
     display: "none"
   })
-  gsap.to(".g-image", {
-    opacity: 0,
-    duration: 0.6,
-    right: "-260px",
-    ease: "power2.out",
+  gsap.to(cursor, {
+    backgroundImage: "url(resources/cursor.png)",
+    scale: 1,
+    duration: 0.2,
   })
+  // gsap.to(".g-image", {
+  //   opacity: 0,
+  //   duration: 0.6,
+  //   right: "-260px",
+  //   ease: "power2.out",
+  // })
+})
+
+textGithub.addEventListener("click", () => {
+  window.open("https://github.com/AbdullahShamoon", "_blank");
 })
 
 //linkedin
-document.querySelector(".text-linkedin").addEventListener("mouseenter", () => {
+let textLinkedin = document.querySelector(".text-linkedin")
+textLinkedin.addEventListener("mouseenter", () => {
   gsap.to(".l-m-image", {
     opacity: 1,
     duration: 1,
@@ -599,15 +615,20 @@ document.querySelector(".text-linkedin").addEventListener("mouseenter", () => {
     ease: "elastic.out(2)",
     display: "block"
   })
-  gsap.to(".l-image", {
-    opacity: 1,
-    duration: 0.6,
-    right: "60px",
-    ease: "back.out(2)",
+  gsap.to(cursor, {
+    backgroundImage: "url(resources/cursor.gif)",
+    scale: 1.5,
+    duration: 0.2,
   })
+  // gsap.to(".l-image", {
+  //   opacity: 1,
+  //   duration: 0.6,
+  //   right: "60px",
+  //   ease: "back.out(2)",
+  // })
 })
 
-document.querySelector(".text-linkedin").addEventListener("mouseleave", () => {
+textLinkedin.addEventListener("mouseleave", () => {
   gsap.to(".l-m-image", {
     opacity: 0,
     duration: 1,
@@ -615,16 +636,26 @@ document.querySelector(".text-linkedin").addEventListener("mouseleave", () => {
     ease: "power2.out",
     display: "none"
   })
-  gsap.to(".l-image", {
-    opacity: 0,
-    duration: 0.6,
-    right: "-260px",
-    ease: "power2.out",
+  gsap.to(cursor, {
+    backgroundImage: "url(resources/cursor.png)",
+    scale: 1,
+    duration: 0.2,
   })
+  // gsap.to(".l-image", {
+  //   opacity: 0,
+  //   duration: 0.6,
+  //   right: "-260px",
+  //   ease: "power2.out",
+  // })
+})
+
+textLinkedin.addEventListener("click", () => {
+  window.open("https://www.linkedin.com/in/abdullah-shamoon12/", "_blank");
 })
 
 //instagram
-document.querySelector(".text-instagram").addEventListener("mouseenter", () => {
+let textInstagram = document.querySelector(".text-instagram")
+textInstagram.addEventListener("mouseenter", () => {
   gsap.to(".i-m-image", {
     opacity: 1,
     duration: 1,
@@ -633,15 +664,20 @@ document.querySelector(".text-instagram").addEventListener("mouseenter", () => {
     ease: "elastic.out(2)",
     display: "block"
   })
-  gsap.to(".i-image", {
-    opacity: 1,
-    duration: 0.6,
-    right: "60px",
-    ease: "back.out(2)",
+  gsap.to(cursor, {
+    backgroundImage: "url(resources/cursor.gif)",
+    scale: 1.5,
+    duration: 0.2,
   })
+  // gsap.to(".i-image", {
+  //   opacity: 1,
+  //   duration: 0.6,
+  //   right: "60px",
+  //   ease: "back.out(2)",
+  // })
 })
 
-document.querySelector(".text-instagram").addEventListener("mouseleave", () => {
+textInstagram.addEventListener("mouseleave", () => {
   gsap.to(".i-m-image", {
     opacity: 0,
     duration: 1,
@@ -649,16 +685,26 @@ document.querySelector(".text-instagram").addEventListener("mouseleave", () => {
     ease: "power2.out",
     display: "none"
   })
-  gsap.to(".i-image", {
-    opacity: 0,
-    duration: 0.6,
-    right: "-260px",
-    ease: "power2.out",
+  gsap.to(cursor, {
+    backgroundImage: "url(resources/cursor.png)",
+    scale: 1,
+    duration: 0.2,
   })
+  // gsap.to(".i-image", {
+  //   opacity: 0,
+  //   duration: 0.6,
+  //   right: "-260px",
+  //   ease: "power2.out",
+  // })
+})
+
+textInstagram.addEventListener("click", () => {
+  window.open("https://www.instagram.com/abdullah_shamoon12/", "_blank");
 })
 
 //facebook
-document.querySelector(".text-facebook").addEventListener("mouseenter", () => {
+let textFacebook = document.querySelector(".text-facebook")
+textFacebook.addEventListener("mouseenter", () => {
   gsap.to(".f-m-image", {
     opacity: 1,
     duration: 1,
@@ -667,15 +713,20 @@ document.querySelector(".text-facebook").addEventListener("mouseenter", () => {
     ease: "elastic.out(2)",
     display: "block"
   })
-  gsap.to(".f-image", {
-    opacity: 1,
-    duration: 0.6,
-    right: "60px",
-    ease: "back.out(2)",
+  gsap.to(cursor, {
+    backgroundImage: "url(resources/cursor.gif)",
+    scale: 1.5,
+    duration: 0.2,
   })
+  // gsap.to(".f-image", {
+  //   opacity: 1,
+  //   duration: 0.6,
+  //   right: "60px",
+  //   ease: "back.out(2)",
+  // })
 })
 
-document.querySelector(".text-facebook").addEventListener("mouseleave", () => {
+textFacebook.addEventListener("mouseleave", () => {
   gsap.to(".f-m-image", {
     opacity: 0,
     duration: 1,
@@ -683,12 +734,20 @@ document.querySelector(".text-facebook").addEventListener("mouseleave", () => {
     ease: "power2.out",
     display: "none"
   })
-  gsap.to(".f-image", {
-    opacity: 0,
-    duration: 0.6,
-    right: "-260px",
-    ease: "power2.out",
+  gsap.to(cursor, {
+    backgroundImage: "url(resources/cursor.png)",
+    scale: 1,
+    duration: 0.2,
   })
+  // gsap.to(".f-image", {
+  //   opacity: 0,
+  //   duration: 0.6,
+  //   right: "-260px",
+  //   ease: "power2.out",
+  // })
 })
 
+textFacebook.addEventListener("click", () => {
+  window.open("https://www.facebook.com/people/Abdullah-Shamoon/pfbid02FB67BG2SzrQQdeCsbBXDqmPj1KqrqDEfpXmDPYFrKpqbyHnYHEGgfPz1ywFyCYrMl/", "_blank");
+})
 
