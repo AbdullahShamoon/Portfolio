@@ -1,4 +1,7 @@
-/* Reset some default browser styles */
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Kumar+One&family=Miltonian+Tattoo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Work+Sans:wght@600&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
@@ -181,7 +184,7 @@ body {
 .content-left h1 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #2d3748;
+  color: #eef3fa;
 }
 
 @media (min-width: 768px) {
@@ -200,11 +203,16 @@ body {
 .highlight .shamoon,
 .highlight .abdullah {
   display: inline-block;
+  font-family: "Barriecito", serif;
+  font-weight: 400;
+  font-style: normal;
+
+
 }
 
 .subheading {
   font-size: 1.5rem;
-  color: #718096;
+  color: #475466;
   margin-top: 10px;
   font-weight: bold;
   padding-left: 12px;
@@ -802,6 +810,18 @@ body {
   text-decoration: line-through;
 }
 
+.pg6-gmail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.pg6-gmail a {
+  color: #13BAF1;
+  font-size: 1.5rem;
+}
+
 .pg6-right {
   display: flex;
   /* flex-direction: column; */
@@ -857,6 +877,129 @@ body {
 
 
 
+/* Three js code css */
+
+
+#threejs-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* background-color: #111; */
+  pointer-events: none;
+}
+
+
+
+/*----- Page 7----- */
+
+.page7 {
+  width: 100%;
+  height: 100vh;
+  /* color: #F6BA53; */
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 8rem;
+  /* background-color: pink; */
+}
+
+
+.sliderTexts {
+  position: relative;
+  width: 200%;
+  height: 100vh;
+  font-family: "Oswald", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.pg7-text {
+  position: absolute;
+  width: fit-content;
+  background-color: white;
+  line-height: 100%;
+}
+
+#text1 {
+  position: absolute;
+  top: 10vw;
+  left: 50vw;
+  rotate: 20deg;
+}
+
+#text2 {
+  position: absolute;
+  top: 20%;
+  left: -20vw;
+}
+
+#text3 {
+  position: absolute;
+  top: 50%;
+  right: 30vw;
+  rotate: 10deg;
+}
+
+#text4 {
+  position: absolute;
+  top: 0%;
+  right: 10vw;
+  rotate: -20deg;
+}
+
+#text5 {
+  position: absolute;
+  top: 70%;
+  left: 10vw;
+  rotate: 3deg;
+}
+
+
+
+/* ------Page 8 ------ */
+
+.page8 {
+  width: 100%;
+  height: 87vh;
+}
+
+.pg8-content {
+  padding-top: 20px;
+  color: #F6BA53;
+  font-size: 16rem;
+  font-family: "Barriecito", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  cursor: default;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+  cursor: grab;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
 
 
 

@@ -24,7 +24,7 @@ document.addEventListener("mousemove", (e) => {
   gsap.to(cursor, {
     x: e.clientX,
     y: e.clientY,
-    duration: 0.1
+    duration: 0.01
   });
 });
 
@@ -105,17 +105,17 @@ let tl = gsap.timeline({
 });
 
 tl.to(".abdullah", {
-  x: 370,
+  x: 430,
   y: 475,
-  scale: 0.4,
+  scale: 0.5,
   duration: 1,
   // color: "#FA5A5A",
   color: "#58C2F9"
 }, "name");
 tl.to(".shamoon", {
-  x: 730,
+  x: 790,
   y: 325,
-  scale: 0.5,
+  scale: 0.6,
   duration: 1,
   // color: "#FA5A5A",
   color: "#58C2F9"
@@ -750,4 +750,180 @@ textFacebook.addEventListener("mouseleave", () => {
 textFacebook.addEventListener("click", () => {
   window.open("https://www.facebook.com/people/Abdullah-Shamoon/pfbid02FB67BG2SzrQQdeCsbBXDqmPj1KqrqDEfpXmDPYFrKpqbyHnYHEGgfPz1ywFyCYrMl/", "_blank");
 })
+
+
+let gmailLink = document.querySelector(".pg6-gmail a")
+gmailLink.addEventListener("mouseenter",()=>{
+  gsap.to(cursor, {
+    backgroundImage: "url(resources/cursor.gif)",
+    scale: 1.5,
+    duration: 0.2,
+  })
+})
+gmailLink.addEventListener("mouseleave",()=>{
+  gsap.to(cursor, {
+    backgroundImage: "url(resources/cursor.png)",
+    scale: 1,
+    duration: 0.2,
+  })
+})
+
+
+
+
+
+// ---Three js code -----
+
+// Wait until the page is loaded
+document.addEventListener("DOMContentLoaded", function () {
+  // Select the container where the 3D model will be placed
+  const container = document.getElementById("threejs-container");
+
+  // Create a Three.js scene
+  const scene = new THREE.Scene();
+
+  // Add ambient light
+  const ambientLight = new THREE.AmbientLight(0xffffff, 2);
+  scene.add(ambientLight);
+
+  // Add point light
+  const pointLight = new THREE.PointLight(0xffffff, 1);
+  pointLight.position.set(5, 5, 5);
+  scene.add(pointLight);
+
+  // Create a camera (PerspectiveCamera)
+  const camera = new THREE.PerspectiveCamera(
+      25, // Field of view
+      container.clientWidth / container.clientHeight, // Aspect ratio
+      0.1, // Near clipping
+      1000 // Far clipping
+  );
+  camera.position.z = 30; // Move camera back
+  camera.position.y = 2.5; // Move camera to the bottom
+
+  // Create a WebGL renderer and attach it to the container
+  const renderer = new THREE.WebGLRenderer({ alpha: true });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  container.appendChild(renderer.domElement);
+
+  let model;
+
+  // Load the GLTF model
+  const loader = new THREE.GLTFLoader();
+  loader.load("resources/model.glb", function (gltf) {
+      // Add the model to the scene
+      model = gltf.scene;
+      scene.add(model);
+
+      // Make the model shiny and bright
+      model.traverse(function (child) {
+        if (child.isMesh) {
+          child.material.metalness = 0.5;
+          child.material.roughness = 0.2;
+          child.material.envMapIntensity = 3;
+        }
+      });
+
+  });
+
+  // Animation loop
+  function animate() {
+      requestAnimationFrame(animate);
+      renderer.render(scene, camera);
+  }
+
+  animate();
+
+  // Resize event to adjust canvas size
+  window.addEventListener("resize", function () {
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+  });
+
+  window.addEventListener("mousemove", (e) =>{
+    if(model){
+      const rotationX = (e.clientX / window.innerWidth - 0.5) * 0.5;
+      const rotationY = (e.clientY / window.innerHeight - 0.5) * 0.5;
+      gsap.to(model.rotation, {
+        y: rotationX,
+        x: rotationY,
+        duration:0.5
+      })
+    }
+  })
+
+});
+
+
+
+//---- Page 7 ----
+
+
+
+gsap.to("#text1", {
+  left: "0vw",
+  top: "0vw",
+  scrollTrigger: {
+    trigger: ".page7",
+    // pin: true,
+    scrub: true,
+    start: "top bottom",
+    end: "bottom top",
+    // markers: true
+  }
+})
+
+gsap.to("#text2", {
+  left: "40vw",
+  scrollTrigger: {
+    trigger: ".page7",
+    // pin: true,
+    scrub: 1,
+    start: "top bottom",
+    end: "bottom top",
+    // markers: true
+  }
+})
+
+gsap.to("#text3", {
+  right: "100vw",
+  scrollTrigger: {
+    trigger: ".page7",
+    // pin: true,
+    scrub: 3,
+    start: "top bottom",
+    end: "bottom top",
+    // markers: true
+  }
+})
+
+gsap.to("#text4", {
+  right: "80vw",
+  top:"30vw",
+  scrollTrigger: {
+    trigger: ".page7",
+    // pin: true,
+    scrub: true,
+    start: "top bottom",
+    end: "bottom top",
+    // markers: true
+  }
+})
+
+gsap.to("#text5", {
+  left: "130vw",
+  top: "80%",
+  scrollTrigger: {
+    trigger: ".page7",
+    // pin: true,
+    scrub: 4,
+    start: "bottom 120%",
+    end: "bottom top",
+    // markers: true
+  }
+})
+
+
+
 
